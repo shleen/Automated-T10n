@@ -1,0 +1,17 @@
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-12'>
+			<h3>Automated T10n</h3>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-6 col-md-offset-3'>
+			<%= form_for @translation, url: translations_path, remote:true, multipart:true do |f| %>
+				<%= f.file_field :file %>
+				<%= f.select :from, options_for_select(['en', 'es']) %>
+				<%= f.select :to, options_for_select(['en', 'es']) %>
+				<%= f.submit 'Go!' %>
+			<% end %>
+		</div>
+	</div>
+</div>

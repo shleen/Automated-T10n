@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Automated T10n</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- jQuery -->
+    <script type='text/javascript' scr='<%= asset_path("jquery-3.3.1.min.js") %>'></script>
+
+    <!-- Bootstrap 4 assets -->
+    <script type='text/javascript' src='<%= asset_path("bootstrap.min.js") %>'></script>
+    <link rel='stylesheet' type='text/css' href='<%= asset_path("bootstrap.min.css") %>'>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
