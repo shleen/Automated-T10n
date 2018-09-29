@@ -1,17 +1,31 @@
 <div class='container'>
-	<div class='row'>
-		<div class='col-md-12'>
-			<h3>Automated T10n</h3>
+	<div class='w-100'>
+		<div class='row'>
+			<div class='col-md-6 offset-md-3'>
+				<h3>Automated T10n</h3>
+				<hr class='w-100'>
+			</div>
 		</div>
-	</div>
-	<div class='row'>
-		<div class='col-md-6 col-md-offset-3'>
-			<%= form_for @translation, url: translations_path, remote:true, multipart:true do |f| %>
-				<%= f.file_field :file %>
-				<%= f.select :from, options_for_select(['en', 'es']) %>
-				<%= f.select :to, options_for_select(['en', 'es']) %>
-				<%= f.submit 'Go!' %>
-			<% end %>
+		<%= form_for @translation, url: translations_path, multipart:true do |f| %>
+		<div class='row'>
+			<div class='col-md-6 offset-md-3'>
+				<div class='form-group'>
+					<%= f.label :yml_file, "File to translate (.yml only please)" %>
+					<%= f.file_field :yml_file, class: 'form-control-file', required: 'required' %>
+				</div>
+				<div class='form-group'>
+					<%= f.label :from, "Translate from:" %>
+					<%= f.select :from, options_for_select(@languages, selected: 'en'), {}, { class:'form-control' } %>
+				</div>
+				<div class='form-group'>
+					<%= f.label :to, "Translate to:" %>
+					<%= f.select :to, options_for_select(@languages), {}, { class:'form-control' } %>
+				</div>
+				<div class='form-group'>
+					<%= f.submit 'Go!', class:'btn btn-secondary w-100', data: { disable_with: false } %>
+				</div>
+			</div>
 		</div>
+		<% end %>
 	</div>
 </div>

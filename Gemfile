@@ -36,6 +36,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Carrierwave for file uploads
 gem 'carrierwave', '~> 1.0'
 
+# Google Translate API
+gem 'google-cloud-translate'
+
+# Easier translations!
+gem 'easy_translate'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

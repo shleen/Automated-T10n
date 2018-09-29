@@ -1,0 +1,165 @@
+en:
+  language_name: "English"
+  general:
+    input_fields:
+      email: "Email"
+      name: "Name"
+      number: "Number"
+      date: "Date"
+      time: "Time"
+      source: "Source"
+    powered_by: "Powered by"
+    # country: # country names #
+               # there's probably a gem for this #
+    date: 
+      today: "Today"
+  models:
+    message: "Message"
+  services:
+    call_service:
+      manager_unavailable: "Call rep unavailable"
+      call_limit: "Call limit"
+      empty_search_string: "You have entered an empty search string."
+      no_search_result: "No messages match this search criteria."
+      concurrent_limit: "Concurrent limit"
+      country_unsupported: "Country not supported"
+    schedule_service:
+      timeslot_taken: "This timeslot has been taken."
+      timeslot_passed: "This timeslot has passed."
+    message_service:
+      test_success: "Message Test Success"
+      success: "Thanks! We will get back to you soon."
+      invalid_number: "Please provide a valid number!"
+  v1:
+    apps:
+      greeting:
+        available: "Hey there! :) \nIf you have any questions, leave your number below for a call from me."
+        unavailable: "Hey there! :) \nWe are currently unavailable but you can still schedule a call with us."
+      call:
+        now: "Call me now"
+        later: "Call  me later"
+        now_description: "Would you like to receive an instant callback now?"
+        later_description: "Would you like to schedule a callback?"
+      connecting:
+        popup:
+          connected:
+            message: "Manager connected. Calling customer."
+          failed:
+            message: "Sorry, we failed to connect."
+          loading:
+            message: "Connecting to company"
+          success:
+            message: "Thanks for connecting!"
+        connected:
+          header: "Connected to Manager"
+          loader_text: "Calling customer"
+        failed:
+          header: "Sorry we failed to connect"
+          description: "Leave a message and we will get back to you"
+          submit: "Leave a message"
+          back: "Back to main page"
+        loading:
+          loader_text: "Calling Manager"
+        success:
+          header: "Thanks for connecting"
+          back: "Back to main page"
+      message:
+        now: "Message us"
+        now_description: "Send us a message and we will get back to you"
+        placeholder: "Your message"
+        whatsapp: "Chat with WhatsApp"
+  errors:
+    services:
+      ip_blocked: "This IP Address has been blocked."
+      number_blocked: "This number has been blocked."
+      number_unsupported: "This number is not supported!"
+      number_in_use: "This number is in use."
+      managers_unavailable: "Sorry, call reps unavailable now."
+      too_many_requests: "Too many call request in a short time."
+  sms:
+    sms_text: |+
+      Thank you for contacting %{company}.
+
+      Contact Person: %{manager_name}
+      Tel: %{manager_number}
+    failed_sms_text: |+
+      %{company} tried contacting you but couldn't get through.
+
+      Contact Person: %{manager_name}
+      Tel: %{manager_number}
+    customer_schedule: |+
+      Thank you for scheduling a call with %{company}.
+      A representative will be contacting you in a few minutes.
+    manager_schedule: |+
+      Greetings! You have a scheduled call at
+      %{time}
+      Name: %{name}
+      Email: %{email}
+      Number: %{number}
+  mailer:
+    dear: "Dear"
+    auto_generated_message_html: "This is an auto generated email by %{company}"
+    notify_near_limit:
+      subject: "Novocall - You've almost reached your calls limit"
+      heading: "You've reached 90% of your calls limit."
+      calls_used: "Calls Used"
+      calls_left: "Calls Left"
+      additional_bundle: "Additional Calls Bundle"
+      extra_calls_upgrade_html: >
+        To enjoy even more calls, you can also upgrade your subscription plan 
+        <a href='https://call.novocall.co/widget/%{hash_id}/charges/plans'>here</a>
+      enable_additional_calls_html: >
+        To enjoy more calls, you can enable the additional calls bundle
+        <a href='https://call.novocall.co/widget/%{hash_id}/charges/subscription'>here</a>
+      upgrade_html: >
+        Alternatively, you may also upgrade your subscription plan 
+        <a href='https://call.novocall.co/widget/%{hash_id}/charges/plans'>here</a>
+    notify_near_trial_expiry:
+      subject: "Novocall - Your plan expires in 7 days."
+      heading: "Your membership ends in 7 days."
+      content_html: >
+        Your membership will be automatically converted to the Free plan when it expires on %{expiry_date}.<br><br>
+        To allow Novocall to continue generating call leads for you, you can
+        <a href="https://call.novocall.co/widget/%{hash_id}/charges/plans">upgrade</a>
+        to a paid plan.
+    notify_trial_expired:
+      subject: "Novocall - Your plan has expired."
+      content_html: >
+        Your membership plan has automatically been converted to the Free plan.<br><br>
+        To allow Novocall to continue generating call leads for you, you can
+        <a href="https://call.novocall.co/widget/%{hash_id}/charges/plans">upgrade</a>
+        to a paid plan.
+    professional_trial_ending:
+      subject: "Your Trial is ending in 3 days."
+      heading: "Your Trial Plan will be expiring in 3 days."
+      content_html: >
+        Your Trial Plan will end on %{end_date}.<br><br>
+        When your trial expires, Novocall will automatically bill USD$%{price} to your saved credit/debit card every %{interval}.<br><br>
+        You can unsubscribe <a href="https://call.novocall.co/widget/%{hash_id}/charges/plans">here</a> to terminate your calls leads.
+    new_lead:
+      subject: "[Call] New Lead, %{number}%{result}"
+      answered_message: "%{manager_name}(%{manager_number}) picked up the call"
+      customer_missed_message: "Customer failed to pick up the call"
+      company_missed_message: "%{company} failed to pick up the call"
+      no_call_message: "No Call - %{message}"
+      heading: "New Call from %{company}"
+      call_result: "Call Result"
+    scheduled_call:
+      subject: "[Scheduled] New lead, %{number}"
+      heading: "You have a new scheduled call"
+    new_message:
+      subject: "[Message] New lead, %{number}"
+    scheduled_inform_customer:
+      subject: "Scheduled Call"
+      heading: "New Scheduled Call"
+      content_html: >
+        Thank you for using our scheduled callback service. 
+        %{company} has been notified of the request and will be contacting you.
+      company: "Company"
+      your_number: "Your number"
+      scheduled_for: "Scheduled Call Time"
+    message_inform_customer:
+      subject: "New Message"
+      greeting: >
+        Thank you for using our message service. 
+        %{company} has received your message and will get back to you shortly.

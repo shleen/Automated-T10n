@@ -1,0 +1,5 @@
+test:
+  sum_fake_language: "Language Name"
+  how_bout_sum_html: "<a href='https://www.google.com'>g00gle!</a>"
+  indent:
+    ation: "hellozZ!"
