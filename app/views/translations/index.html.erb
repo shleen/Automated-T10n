@@ -13,16 +13,22 @@
 					<%= f.label :yml_file, "File to translate (.yml only please)" %>
 					<%= f.file_field :yml_file, class: 'form-control-file', required: 'required' %>
 				</div>
-				<div class='form-group'>
-					<%= f.label :from, "Translate from:" %>
-					<%= f.select :from, options_for_select(@languages, selected: 'en'), {}, { class:'form-control' } %>
+				<div class='row'>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<%= f.label :from, "Translate from:" %>
+							<%= f.select :from, options_for_select(@languages, selected: 'en'), {}, { class:'form-control' } %>
+						</div>
+					</div>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<%= f.label :to, "Translate to:" %>
+							<%= f.select :to, options_for_select(@languages), {}, { class:'form-control' } %>
+						</div>
+					</div>
 				</div>
 				<div class='form-group'>
-					<%= f.label :to, "Translate to:" %>
-					<%= f.select :to, options_for_select(@languages), {}, { class:'form-control' } %>
-				</div>
-				<div class='form-group'>
-					<%= f.submit 'Go!', class:'btn btn-secondary w-100', data: { disable_with: false } %>
+					<%= f.submit @submit_text, class:'btn btn-secondary w-100', data: { disable_with: false } %>
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,6 @@
 class TranslationsController < ApplicationController
   before_action :set_up_instance_variables
+  before_action :get_submit_text, only: [:index]
 
   def index; end
 
@@ -101,5 +102,9 @@ class TranslationsController < ApplicationController
       disposition: 'attachment',
       status: 200
     )
+  end
+
+  def get_submit_text
+    @submit_text = ['Abracadabra!', 'Hocus Pocus!', 'Presto chango!', 'Shazam!'].sample
   end
 end
