@@ -1,24 +1,5 @@
-# README
+## Automated T10n
+or, **Automated Translation**, if you wanna be technical about it.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[https://automated-t10n.herokuapp.com/](https://automated-t10n.herokuapp.com/)
