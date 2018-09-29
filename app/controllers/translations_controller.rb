@@ -31,7 +31,7 @@ class TranslationsController < ApplicationController
   end
 
   def translate(translation)
-    translated = get_translation(translation)
+    translated = ['¡Hola!', '¡Adiós!', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes'] #get_translation(translation)
     update_file(translated, translation)
     download_file(translation)
   end
@@ -74,7 +74,8 @@ class TranslationsController < ApplicationController
   				check(_k, _v, v.length > 1)
   			end
   		else 
-  			eval("@yml_file#{@i} = @translated[@counter]")
+        puts eval("@yml_file#{@i}")
+  			#eval("@yml_file#{@i} = @translated[@counter]")
         @counter += 1
   			
         if pop
