@@ -1,8 +1,0 @@
----
-es:
-  greetings:
-    hello: "¡Hola!"
-    goodbye: "¡Adiós!"
-  days:
-    monday: lunes
-    tuesday: martes
