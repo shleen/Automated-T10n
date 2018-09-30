@@ -1,0 +1,11 @@
+---
+es:
+  greetings:
+    hello: "¡Hola!"
+    goodbye: "¡Adiós!"
+  days:
+    monday: lunes
+    tuesday: martes
+    wednesday: miércoles
+    thursday: jueves
+    friday: viernes

@@ -31,7 +31,7 @@ class TranslationsController < ApplicationController
   end
 
   def translate(translation)
-    translated = ['¡Hola!', '¡Adiós!', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes'] #get_translation(translation)
+    translated = get_translation(translation)
     update_file(translated, translation)
     download_file(translation)
   end
@@ -67,19 +67,21 @@ class TranslationsController < ApplicationController
   	@translated = translated
     @translation = translation
 
-  	def check(k, v, pop = false)
+  	def check(k, v, parent = nil, pop = false)
       @i += "['#{k}']"
   		if v.is_a? Hash
   			v.clone.each do |_k, _v|
-  				check(_k, _v, v.length > 1)
+  				check(_k, _v, k, v.length > 1)
   			end
   		else 
-        puts eval("@yml_file#{@i}")
-  			#eval("@yml_file#{@i} = @translated[@counter]")
+  			eval("@yml_file#{@i} = @translated[@counter]")
         @counter += 1
   			
         if pop
           @i.slice! "['#{k}']"
+          if eval("@yml_file#{@i}").to_a.last == [k,v]
+            @i.slice! "['#{parent}']"
+          end
         else
           @i = "['#{@translation.from}']"
         end
